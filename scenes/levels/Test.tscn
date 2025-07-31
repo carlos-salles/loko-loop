@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb1xo6m4d0dgh"]
+
+[ext_resource type="PackedScene" uid="uid://c255kv3h16mjf" path="res://scenes/player/Player.tscn" id="1_rcuii"]
+[ext_resource type="PackedScene" uid="uid://d3oqj4hgrkr7l" path="res://scenes/buttons/Button.tscn" id="2_g6m21"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_rcuii")]
+position = Vector2(346, 317)
+scale = Vector2(4, 4)
+
+[node name="InteractButton" parent="." instance=ExtResource("2_g6m21")]
+position = Vector2(551, 162)
+scale = Vector2(4, 4)
