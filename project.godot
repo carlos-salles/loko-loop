@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Loko Loop"
-run/main_scene="res://scenes/levels/Test.tscn"
+run/main_scene="res://scenes/levels/mapa_completo.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,8 +22,8 @@ Global="*res://scenes/global.gd"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=368
+window/size/viewport_height=208
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
