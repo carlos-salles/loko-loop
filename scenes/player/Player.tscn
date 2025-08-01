@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c255kv3h16mjf"]
 
-[ext_resource type="Texture2D" uid="uid://vyxn6nywyjvx" path="res://icon.svg" id="1_mvqye"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_wq0r8"]
+[ext_resource type="Texture2D" uid="uid://bomdfrh7xolr2" path="res://sprites/Alori.png" id="2_8lfwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a80fc"]
 
@@ -10,11 +10,10 @@ radius = 20.0998
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wq0r8")
+speed = 85.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -18.5)
-scale = Vector2(0.225, 0.445312)
-texture = ExtResource("1_mvqye")
+texture = ExtResource("2_8lfwe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_a80fc")

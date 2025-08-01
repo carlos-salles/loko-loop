@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 
-const SPEED = 300.0
+@export var speed = 300.0
 
 func _ready() -> void:
 	Global.player = self
@@ -19,5 +19,5 @@ func _physics_process(delta: float) -> void:
 	
 	var direction  = Vector2(input_x, input_y).normalized()
 		
-	velocity = direction * SPEED
+	velocity = direction * speed
 	move_and_slide()

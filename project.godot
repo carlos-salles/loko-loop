@@ -20,6 +20,14 @@ config/icon="res://icon.svg"
 InteractionManager="*res://scenes/interaction/interaction_manager.gd"
 Global="*res://scenes/global.gd"
 
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/stretch/mode="viewport"
+
 [input]
 
 interact={
@@ -32,3 +40,7 @@ interact={
 
 2d_physics/layer_1="default"
 2d_physics/layer_4="interaction"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
