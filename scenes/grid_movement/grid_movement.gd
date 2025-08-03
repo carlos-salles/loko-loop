@@ -44,12 +44,7 @@ func push(dir: Vector2, previous_body_count: int = 0) -> bool:
 
 
 func get_body_torwards(dir: Vector2):
-	var global_pos = body.global_position
 	dir = dir.normalized().ceil()
-
-	var l = TILE_SIZE.x
-	var a = global_pos + 0.6*l * dir
-	var b = global_pos + 0.8*l * dir
 
 	if dir == Vector2.RIGHT:
 		return $Right.get_collider()
@@ -67,7 +62,6 @@ func get_body_torwards(dir: Vector2):
 func move(tiles: Vector2) -> void:
 	if sprite_pos_tween and sprite_pos_tween.is_running():
 		return
-		
 	var movement = Vector2(tiles.x * TILE_SIZE.x, tiles.y * TILE_SIZE.y)
 	body.global_position += movement
 	if sprite:
