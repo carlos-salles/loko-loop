@@ -6,7 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vy4jn"]
 size = Vector2(16, 16)
 
-[node name="Rock" type="StaticBody2D"]
+[node name="Rock" type="AnimatableBody2D" groups=["heavy"]]
+sync_to_physics = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fdbgq")

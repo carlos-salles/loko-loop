@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b60flywssswst"]
+
+[ext_resource type="Script" path="res://scenes/buttons/ground_button.gd" id="1_hahtd"]
+[ext_resource type="Texture2D" uid="uid://wbepbiykaktn" path="res://sprites/desert_elemens.png" id="1_lp1wk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31lkb"]
+size = Vector2(8, 8)
+
+[node name="GroundButton" type="Area2D"]
+monitorable = false
+script = ExtResource("1_hahtd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lp1wk")
+hframes = 3
+vframes = 3
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_31lkb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
