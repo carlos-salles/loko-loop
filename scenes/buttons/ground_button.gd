@@ -21,11 +21,11 @@ func _process(delta: float) -> void:
 func set_state(active: bool):
 	self.active = active
 	if active:
-		$Sprite2D.frame = 5
+		$Sprite2D.frame = 6
 		activated.emit()
 		print("OK")
 	else:
-		$Sprite2D.frame = 6
+		$Sprite2D.frame = 5
 		deactivated.emit() 
 
 func _on_body_entered(body: Node2D) -> void:
