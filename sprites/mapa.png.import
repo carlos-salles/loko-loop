@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ne0ug28130t6"
-path="res://.godot/imported/Alori.png-83c03960e3c91d832d52e8b73ac085a9.ctex"
+uid="uid://cm0qjt02mrgkp"
+path="res://.godot/imported/mapa.png-68882f5515372bf973f4075d63e0433e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Alori.png"
-dest_files=["res://.godot/imported/Alori.png-83c03960e3c91d832d52e8b73ac085a9.ctex"]
+source_file="res://sprites/mapa.png"
+dest_files=["res://.godot/imported/mapa.png-68882f5515372bf973f4075d63e0433e.ctex"]
 
 [params]
 
