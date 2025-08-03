@@ -7,6 +7,9 @@ class_name Player
 
 var last_direction := Vector2.ZERO
 
+signal started
+var started_moving: bool = false
+
 func _ready() -> void:
 	Global.player = self
 	reset(false)
@@ -19,6 +22,8 @@ func _physics_process(delta: float) -> void:
 	movement()
 
 func reset(is_full_reset: bool):
+	if is_full_reset:
+		started_moving = false
 	set_physics_process(false)
 	
 func start():
@@ -43,6 +48,9 @@ func movement():
 		dir = Vector2(0, input_y)
 		
 	if dir != Vector2.ZERO:
+		if not started_moving:
+			started_moving = true
+			started.emit()
 		if grid_movement.sprite_pos_tween and grid_movement.sprite_pos_tween.is_running():
 			return
 			

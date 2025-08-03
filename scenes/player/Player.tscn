@@ -183,7 +183,7 @@ _data = {
 "Up": SubResource("Animation_ua6o1")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["heavy", "reset"]]
 script = ExtResource("1_wq0r8")
 speed = 85.0
 
