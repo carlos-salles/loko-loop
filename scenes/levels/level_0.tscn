@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://c1ojchv818udf" path="res://tile_set.tres" id="1_lop68"]
 [ext_resource type="PackedScene" uid="uid://c255kv3h16mjf" path="res://scenes/player/Player.tscn" id="2_ddqwm"]
-[ext_resource type="PackedScene" path="res://scenes/buttons/Spikes.tscn" id="2_qdk21"]
+[ext_resource type="PackedScene" uid="uid://cca8fbj05gwfn" path="res://scenes/buttons/Spikes.tscn" id="2_qdk21"]
 [ext_resource type="PackedScene" uid="uid://cyry7fnnx1pl7" path="res://scenes/buttons/GroundButton.tscn" id="3_xwim0"]
 [ext_resource type="PackedScene" uid="uid://twht6rc7vro1" path="res://scenes/rock/Rock.tscn" id="4_vh3lk"]
 [ext_resource type="PackedScene" uid="uid://cmijfhkiho8oh" path="res://scenes/loop_manager/LoopManager.tscn" id="6_vqvla"]
@@ -24,44 +24,49 @@ tile_set = ExtResource("1_lop68")
 position = Vector2(168, 184)
 
 [node name="Spikes" parent="Node2D/Node2D2" node_paths=PackedStringArray("required_buttons") instance=ExtResource("2_qdk21")]
-required_buttons = [NodePath("../../GroundButton")]
+required_buttons = [NodePath("../../GroundButton"), NodePath("../../GroundButton2")]
 
 [node name="Spikes2" parent="Node2D/Node2D2" node_paths=PackedStringArray("required_buttons") instance=ExtResource("2_qdk21")]
 position = Vector2(16, 0)
-required_buttons = [NodePath("../../GroundButton")]
+required_buttons = [NodePath("../../GroundButton"), NodePath("../../GroundButton2")]
 
 [node name="Spikes3" parent="Node2D/Node2D2" node_paths=PackedStringArray("required_buttons") instance=ExtResource("2_qdk21")]
 position = Vector2(0, 16)
-required_buttons = [NodePath("../../GroundButton")]
+required_buttons = [NodePath("../../GroundButton"), NodePath("../../GroundButton2")]
 
 [node name="Spikes4" parent="Node2D/Node2D2" node_paths=PackedStringArray("required_buttons") instance=ExtResource("2_qdk21")]
 position = Vector2(16, 16)
-required_buttons = [NodePath("../../GroundButton")]
+required_buttons = [NodePath("../../GroundButton"), NodePath("../../GroundButton2")]
 
 [node name="Spikes5" parent="Node2D/Node2D2" node_paths=PackedStringArray("required_buttons") instance=ExtResource("2_qdk21")]
 position = Vector2(32, 0)
-required_buttons = [NodePath("../../GroundButton")]
+required_buttons = [NodePath("../../GroundButton"), NodePath("../../GroundButton2")]
 
 [node name="Spikes6" parent="Node2D/Node2D2" node_paths=PackedStringArray("required_buttons") instance=ExtResource("2_qdk21")]
 position = Vector2(48, 0)
-required_buttons = [NodePath("../../GroundButton")]
+required_buttons = [NodePath("../../GroundButton"), NodePath("../../GroundButton2")]
 
 [node name="Spikes7" parent="Node2D/Node2D2" node_paths=PackedStringArray("required_buttons") instance=ExtResource("2_qdk21")]
 position = Vector2(32, 16)
-required_buttons = [NodePath("../../GroundButton")]
+required_buttons = [NodePath("../../GroundButton"), NodePath("../../GroundButton2")]
 
 [node name="Spikes8" parent="Node2D/Node2D2" node_paths=PackedStringArray("required_buttons") instance=ExtResource("2_qdk21")]
 position = Vector2(48, 16)
-required_buttons = [NodePath("../../GroundButton")]
+required_buttons = [NodePath("../../GroundButton"), NodePath("../../GroundButton2")]
 
 [node name="GroundButton" parent="Node2D" instance=ExtResource("3_xwim0")]
 position = Vector2(280, 72)
+
+[node name="GroundButton2" parent="Node2D" instance=ExtResource("3_xwim0")]
+position = Vector2(248, 104)
+keep = true
 
 [node name="Rock" parent="Node2D" instance=ExtResource("4_vh3lk")]
 position = Vector2(136, 72)
 
 [node name="Rock2" parent="Node2D" instance=ExtResource("4_vh3lk")]
 position = Vector2(136, 88)
+keep = true
 
 [node name="Player" parent="." instance=ExtResource("2_ddqwm")]
 position = Vector2(104, 56)
