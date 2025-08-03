@@ -4,7 +4,7 @@ class_name LoopManager
 @export var loop_duration_seconds:= 8.0
 @export var total_timers: int = 3
 var finished_timers: int = 0
-
+@onready var container = get_node("Panel/VBoxContainer")
 
 @export var root_node: Node
 var reset_nodes: Array
@@ -87,12 +87,12 @@ func start():
 
 func start_timer():
 	var index = total_timers -1 - finished_timers
-	var sprite = $HBoxContainer.get_child(index).get_node("AnimatedSprite2D") as AnimatedSprite2D
+	var sprite = container.get_child(total_timers - 1 - index).get_node("AnimatedSprite2D") as AnimatedSprite2D
 	sprite.play("running", 8.0 / loop_duration_seconds)
 	$Timer.start(loop_duration_seconds)
 	
 func spin():
-	for hourglass in $HBoxContainer.get_children():
+	for hourglass in container.get_children():
 			var sprite = hourglass.get_node("AnimatedSprite2D") as AnimatedSprite2D
 			sprite.play("spin", 1.0)
 
