@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://qiuyvcw47fsq"]
+[gd_scene load_steps=7 format=4 uid="uid://cdtlcaowufrr5"]
 
 [ext_resource type="TileSet" uid="uid://c1ojchv818udf" path="res://tile_set.tres" id="1_au7uj"]
 [ext_resource type="PackedScene" uid="uid://cyry7fnnx1pl7" path="res://scenes/buttons/GroundButton.tscn" id="3_3up0x"]
 [ext_resource type="PackedScene" uid="uid://twht6rc7vro1" path="res://scenes/rock/Rock.tscn" id="4_8c83y"]
-[ext_resource type="PackedScene" uid="uid://cca8fbj05gwfn" path="res://scenes/buttons/Spikes.tscn" id="5_a7ewr"]
+[ext_resource type="PackedScene" uid="uid://dcspaxpm8n5fq" path="res://scenes/buttons/Spikes.tscn" id="5_a7ewr"]
 [ext_resource type="Script" path="res://scenes/levels/LevelTransition.gd" id="6_r0ew6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c72bj"]

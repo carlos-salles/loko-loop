@@ -10,7 +10,7 @@ func on_button_pressed(button: Button) -> void:
 	get_tree().set_meta("previous_scene", get_tree().current_scene.scene_file_path)
 	match button.name:
 		"Play":
-			var _game: bool = get_tree().change_scene_to_file("res://scenes/levels/mapa_completo.tscn")
+			var _game: bool = get_tree().change_scene_to_file("res://scenes/levels/full_map.tscn")
 		"Quit":
 			if OS.has_feature("web"):
 				OS.alert("Obrigado por jogar! Feche a aba para sair.", "Espero que você tenha gostado")
