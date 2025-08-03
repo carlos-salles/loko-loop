@@ -180,6 +180,7 @@ load_path = "res://.godot/imported/obstacles_.png-1ef49e4d9469b954eb2d13929c0c12
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jlerb"]
 texture = SubResource("CompressedTexture2D_yue86")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -225,6 +226,7 @@ texture = ExtResource("2_yvn1m")
 8:1/0 = 0
 9:1/0 = 0
 10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:1/0 = 0
 0:2/0 = 0
 0:2/0/terrain_set = 0
