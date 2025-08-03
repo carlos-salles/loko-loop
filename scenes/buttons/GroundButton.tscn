@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b60flywssswst"]
+[gd_scene load_steps=4 format=3 uid="uid://cyry7fnnx1pl7"]
 
 [ext_resource type="Script" path="res://scenes/buttons/ground_button.gd" id="1_hahtd"]
 [ext_resource type="Texture2D" uid="uid://wbepbiykaktn" path="res://sprites/desert_elemens.png" id="1_lp1wk"]

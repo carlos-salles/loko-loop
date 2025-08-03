@@ -31,7 +31,6 @@ animations = [{
 size = Vector2(26, 24)
 
 [node name="fase-2-1" type="Node2D"]
-position = Vector2(368, 0)
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true

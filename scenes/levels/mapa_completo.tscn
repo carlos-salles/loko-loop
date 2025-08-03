@@ -7,11 +7,14 @@
 [node name="MapaCompleto" type="Node2D"]
 
 [node name="fase-2-1" parent="." instance=ExtResource("2_orttf")]
+position = Vector2(368, 0)
 
 [node name="fase2-0" parent="." instance=ExtResource("1_x2p4w")]
 
 [node name="Player" parent="." instance=ExtResource("3_df08h")]
-position = Vector2(291, 117)
+position = Vector2(32, 144)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

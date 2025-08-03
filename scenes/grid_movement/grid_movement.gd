@@ -29,7 +29,6 @@ func push(dir: Vector2, previous_body_count: int = 0) -> bool:
 	
 	if not pushable or previous_body_count > max_previous_body_count:
 		return false
-
 	
 	var next_body = get_body_torwards(dir)
 	if next_body == null:

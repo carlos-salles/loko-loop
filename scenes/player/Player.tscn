@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c255kv3h16mjf"]
+[gd_scene load_steps=13 format=3 uid="uid://c255kv3h16mjf"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_wq0r8"]
 [ext_resource type="Texture2D" uid="uid://ne0ug28130t6" path="res://sprites/Alori.png" id="2_8lfwe"]
@@ -10,7 +10,131 @@ size = Vector2(10, 10)
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdbdn"]
 radius = 18.0
 
-[node name="Player" type="CharacterBody2D" groups=["heavy"]]
+[sub_resource type="Animation" id="Animation_d1imo"]
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_he0bj"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o30fy"]
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_qoqwv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g7vhl"]
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_ua6o1"]
+resource_name = "Walk"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00xdd"]
+_data = {
+"Down": SubResource("Animation_d1imo"),
+"Idle": SubResource("Animation_he0bj"),
+"Left": SubResource("Animation_o30fy"),
+"RESET": SubResource("Animation_qoqwv"),
+"Right": SubResource("Animation_g7vhl"),
+"Up": SubResource("Animation_ua6o1")
+}
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_wq0r8")
 speed = 85.0
 
@@ -32,3 +156,8 @@ shape = SubResource("CircleShape2D_jdbdn")
 
 [node name="GridMovement" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_xlide")]
 sprite = NodePath("../Sprite2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_00xdd")
+}
