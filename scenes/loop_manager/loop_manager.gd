@@ -1,4 +1,5 @@
-extends Node
+extends Node2D
+class_name LoopManager
 
 @export var loop_duration_seconds:= 8.0
 @export var total_timers: int = 3
@@ -13,7 +14,9 @@ var running_tween_count := 0
 var remaining_timers: int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	register_nodes(root_node)
+	Global.loop_manager = self
+	if root_node:
+		register_nodes(root_node)
 	if Global.player:
 		Global.player.started.connect(start_timer)
 	else:
@@ -24,14 +27,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func register_nodes(root_node: Node) -> void:
+func register_nodes(root_node: Node2D) -> void:
 	self.root_node = root_node
-	var f = func (node): return root_node.is_ancestor_of(node)
-	var m1 = func (node: Node2D): return {"node": node, "pos": node.global_position, "keep": false} 
-	var m2 = func (node: Node2D): return {"node": node, "pos": node.global_position, "keep": true}
+	self.transform = root_node.transform
+	
 	var nodes = get_tree().get_nodes_in_group("reset")
+		
 	reset_nodes.clear()
 	for node in nodes:
+		if node == Global.player:
+			continue
 		if root_node.is_ancestor_of(node):
 			var x = {
 				"node": node, 
@@ -39,7 +44,13 @@ func register_nodes(root_node: Node) -> void:
 				"keep": node.is_in_group("keep")
 			} 
 			reset_nodes.append(x)
-
+	if Global.player:
+		var node = Global.player
+		reset_nodes.append({
+					"node": node, 
+					"pos": node.global_position, 
+					"keep": false
+				})
 func reset_position(node: Node2D, pos: Vector2, tween: Tween):
 	var current_pos = node.global_position
 	var sprite = node.get_node("Sprite2D")
@@ -77,14 +88,16 @@ func start_timer():
 	sprite.play("running", 8.0 / loop_duration_seconds)
 	$Timer.start(loop_duration_seconds)
 	
+func spin():
+	for hourglass in $HBoxContainer.get_children():
+			var sprite = hourglass.get_node("AnimatedSprite2D") as AnimatedSprite2D
+			sprite.play("spin", 1.0)
 
 func _on_timer_timeout() -> void:
 	finished_timers += 1
 	var is_full_reset = finished_timers == total_timers
 	if (is_full_reset):
-		for hourglass in $HBoxContainer.get_children():
-			var sprite = hourglass.get_node("AnimatedSprite2D") as AnimatedSprite2D
-			sprite.play("spin", 1.0)
+		spin()
 			
 	reset(is_full_reset)
 	sand_animation(is_full_reset)
@@ -99,3 +112,9 @@ func sand_animation(is_full_reset: bool):
 	
 	if not is_full_reset:
 		start_timer()
+
+func force_reset():
+	$Timer.stop()
+	spin()
+	reset(true)
+	
