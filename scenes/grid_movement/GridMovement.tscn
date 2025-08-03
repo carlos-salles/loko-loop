@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmau8vai6kh3t"]
+
+[ext_resource type="Script" path="res://scenes/grid_movement/grid_movement.gd" id="1_rnfti"]
+
+[node name="GridMovement" type="Node2D"]
+script = ExtResource("1_rnfti")
+
+[node name="Down" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+target_position = Vector2(0, 10)
+hit_from_inside = true
+
+[node name="Right" type="RayCast2D" parent="."]
+position = Vector2(10, 0)
+rotation = -1.5708
+target_position = Vector2(0, 10)
+hit_from_inside = true
+
+[node name="Left" type="RayCast2D" parent="."]
+position = Vector2(-10, 0)
+rotation = 1.5708
+target_position = Vector2(0, 10)
+hit_from_inside = true
+
+[node name="Up" type="RayCast2D" parent="."]
+position = Vector2(0, -10)
+rotation = -3.14159
+target_position = Vector2(0, 10)
+hit_from_inside = true
