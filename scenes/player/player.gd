@@ -15,8 +15,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
 	movement()
-	
-	
+
 
 func movement():
 	var input_x := Input.get_axis("ui_left", "ui_right")
@@ -29,6 +28,9 @@ func movement():
 		dir = Vector2(0, input_y)
 		
 	if dir != Vector2.ZERO:
+		if grid_movement.sprite_pos_tween and grid_movement.sprite_pos_tween.is_running():
+			return
+			
 		var body = grid_movement.get_body_torwards(dir)
 		if body == null:
 			grid_movement.move(dir)
