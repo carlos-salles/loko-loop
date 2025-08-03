@@ -1,9 +1,12 @@
-[gd_scene load_steps=39 format=3 uid="uid://cmijfhkiho8oh"]
+[gd_scene load_steps=40 format=3 uid="uid://cmijfhkiho8oh"]
 
 [ext_resource type="Script" path="res://scenes/loop_manager/loop_manager.gd" id="1_ajvn0"]
 [ext_resource type="Texture2D" uid="uid://cy0e3h11qkjv4" path="res://sprites/Ampulheta.png" id="2_dpxxf"]
 [ext_resource type="Texture2D" uid="uid://bdbcfremu3mqv" path="res://sprites/sand_particle.png" id="3_inpqv"]
 [ext_resource type="AudioStream" uid="uid://diif3fbihdb5h" path="res://Sounds/Som_de_vento_forte.ogg" id="4_jit7m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krci6"]
+bg_color = Color(0.0784314, 0.180392, 0.117647, 0.835294)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c3wx5"]
 atlas = ExtResource("2_dpxxf")
@@ -262,40 +265,50 @@ process_callback = 0
 wait_time = 8.0
 one_shot = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-modulate = Color(1, 1, 1, 0.784314)
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 176.0
-offset_right = 320.0
-offset_bottom = 208.0
+offset_left = 3.0
+offset_top = 53.0
+offset_right = 35.0
+offset_bottom = 158.0
 grow_vertical = 0
-theme_override_constants/separation = 48
+theme_override_styles/panel = SubResource("StyleBoxFlat_krci6")
 
-[node name="Control" type="Panel" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 36
+
+[node name="Control" type="Panel" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/Control"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainer/Control"]
 sprite_frames = SubResource("SpriteFrames_yjl5r")
 animation = &"full"
 offset = Vector2(16, 16)
 
-[node name="Control2" type="Panel" parent="HBoxContainer"]
+[node name="Control2" type="Panel" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/Control2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainer/Control2"]
 sprite_frames = SubResource("SpriteFrames_yjl5r")
 animation = &"full"
 offset = Vector2(16, 16)
 
-[node name="Control3" type="Panel" parent="HBoxContainer"]
+[node name="Control3" type="Panel" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/Control3"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel/VBoxContainer/Control3"]
 sprite_frames = SubResource("SpriteFrames_yjl5r")
 animation = &"full"
 offset = Vector2(16, 16)
