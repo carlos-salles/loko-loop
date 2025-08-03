@@ -72,6 +72,7 @@ keep = true
 position = Vector2(104, 56)
 
 [node name="LoopManager" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("6_vqvla")]
+loop_duration_seconds = 2.0
 root_node = NodePath("..")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -33,11 +33,12 @@ func set_state(raised: bool):
 	self.raised = raised
 
 func raise_spikes():
-	$CollisionShape2D.disabled = false
+	
+	$CollisionShape2D.set_deferred("disabled", false)
 	$Sprite2D.visible = true
 
 func lower_spikes():
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.set_deferred("disabled", true)
 	$Sprite2D.visible = false
 	
 func reset(is_full_reset: bool):
