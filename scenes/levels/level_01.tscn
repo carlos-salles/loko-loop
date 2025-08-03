@@ -29,11 +29,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jlmq"]
-size = Vector2(25, 24)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pb8r"]
 size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58610"]
+size = Vector2(16, 32)
 
 [node name="Level01" type="Node2D"]
 
@@ -69,15 +69,6 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.54221
 
-[node name="Area2D" type="Area2D" parent="."]
-z_index = 1
-position = Vector2(378, 112)
-script = ExtResource("3_2lv5g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-28.5, 0)
-shape = SubResource("RectangleShape2D_8jlmq")
-
 [node name="Area2D2" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(152, 8)
@@ -86,6 +77,15 @@ script = ExtResource("3_2lv5g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(32, 0)
 shape = SubResource("RectangleShape2D_3pb8r")
+
+[node name="Area2D3" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(360, 104)
+script = ExtResource("3_2lv5g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_58610")
 
 [node name="GroundButton" parent="." instance=ExtResource("5_jojit")]
 position = Vector2(168, 88)
@@ -128,5 +128,5 @@ required_buttons = [NodePath("../GroundButton"), NodePath("../GroundButton3"), N
 position = Vector2(264, 168)
 required_buttons = [NodePath("../GroundButton"), NodePath("../GroundButton3"), NodePath("../GroundButton4")]
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]

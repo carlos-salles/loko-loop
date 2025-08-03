@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwkq55ojy1iei"]
+[gd_scene load_steps=7 format=3 uid="uid://cwkq55ojy1iei"]
 
 [ext_resource type="PackedScene" uid="uid://qiuyvcw47fsq" path="res://scenes/levels/Level_00.tscn" id="1_6q0bh"]
 [ext_resource type="PackedScene" uid="uid://b3dkrslm4oe2f" path="res://scenes/levels/level_01.tscn" id="2_l23dt"]
 [ext_resource type="PackedScene" uid="uid://cmijfhkiho8oh" path="res://scenes/loop_manager/LoopManager.tscn" id="3_gx7wa"]
 [ext_resource type="PackedScene" uid="uid://c255kv3h16mjf" path="res://scenes/player/Player.tscn" id="3_qfoqq"]
+[ext_resource type="PackedScene" uid="uid://cgts7aijoy4wr" path="res://scenes/levels/level_02.tscn" id="3_xt37h"]
 [ext_resource type="AudioStream" uid="uid://oy7buo7d3uhi" path="res://Sounds/Soundtrack_principal.ogg" id="4_4g28o"]
 
 [node name="FullMap" type="Node2D"]
@@ -12,6 +13,9 @@
 
 [node name="Level01" parent="." instance=ExtResource("2_l23dt")]
 position = Vector2(0, 208)
+
+[node name="Level02" parent="." instance=ExtResource("3_xt37h")]
+position = Vector2(368, 208)
 
 [node name="Player" parent="." instance=ExtResource("3_qfoqq")]
 position = Vector2(264, 120)
