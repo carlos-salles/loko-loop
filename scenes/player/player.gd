@@ -9,7 +9,8 @@ var last_direction := Vector2.ZERO
 
 func _ready() -> void:
 	Global.player = self
-
+	reset(false)
+	start()
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -17,6 +18,11 @@ func _physics_process(delta: float) -> void:
 	
 	movement()
 
+func reset(is_full_reset: bool):
+	set_physics_process(false)
+	
+func start():
+	set_physics_process(true)
 
 func movement():
 	var input_x := Input.get_axis("ui_left", "ui_right")

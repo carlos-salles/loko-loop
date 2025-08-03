@@ -32,3 +32,9 @@ func _on_body_exited(body: Node2D) -> void:
 	print("BYE")
 	if body.is_in_group("heavy"):
 		set_state(false)
+		
+func reset(is_full_reset: bool):
+	set_state(false)
+	
+func start():
+	pass

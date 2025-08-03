@@ -1,11 +1,12 @@
 extends StaticBody2D
 
 @export var required_buttons: Array[Node2D]
+@export var start_raised: bool = true
 var raised: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	reset(false)
+	start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,3 +39,9 @@ func raise_spikes():
 func lower_spikes():
 	$CollisionShape2D.disabled = true
 	$Sprite2D.visible = false
+	
+func reset(is_full_reset: bool):
+	set_state(start_raised)
+	
+func start():
+	pass
