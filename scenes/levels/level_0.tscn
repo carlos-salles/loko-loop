@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://ddn1ao0ue7y2l"]
+[gd_scene load_steps=7 format=4 uid="uid://ddn1ao0ue7y2l"]
 
 [ext_resource type="TileSet" uid="uid://c1ojchv818udf" path="res://tile_set.tres" id="1_lop68"]
 [ext_resource type="PackedScene" uid="uid://c255kv3h16mjf" path="res://scenes/player/Player.tscn" id="2_ddqwm"]
 [ext_resource type="PackedScene" uid="uid://cca8fbj05gwfn" path="res://scenes/buttons/Spikes.tscn" id="2_qdk21"]
-[ext_resource type="PackedScene" uid="uid://b60flywssswst" path="res://scenes/buttons/GroundButton.tscn" id="3_xwim0"]
+[ext_resource type="PackedScene" uid="uid://cyry7fnnx1pl7" path="res://scenes/buttons/GroundButton.tscn" id="3_xwim0"]
 [ext_resource type="PackedScene" uid="uid://twht6rc7vro1" path="res://scenes/rock/Rock.tscn" id="4_vh3lk"]
+[ext_resource type="PackedScene" uid="uid://cmijfhkiho8oh" path="res://scenes/loop_manager/LoopManager.tscn" id="6_vqvla"]
 
 [node name="Level0" type="Node2D"]
 
@@ -56,10 +57,13 @@ required_buttons = [NodePath("../../GroundButton")]
 position = Vector2(280, 72)
 
 [node name="Rock" parent="Node2D" instance=ExtResource("4_vh3lk")]
-position = Vector2(120, 72)
+position = Vector2(136, 72)
 
 [node name="Rock2" parent="Node2D" instance=ExtResource("4_vh3lk")]
-position = Vector2(120, 88)
+position = Vector2(136, 88)
 
 [node name="Player" parent="." instance=ExtResource("2_ddqwm")]
 position = Vector2(104, 56)
+
+[node name="LoopManager" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("6_vqvla")]
+root_node = NodePath("..")

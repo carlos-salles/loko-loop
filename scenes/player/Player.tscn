@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c255kv3h16mjf"]
+[gd_scene load_steps=12 format=3 uid="uid://c255kv3h16mjf"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_wq0r8"]
 [ext_resource type="Texture2D" uid="uid://ne0ug28130t6" path="res://sprites/Alori.png" id="2_8lfwe"]
@@ -6,9 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a80fc"]
 size = Vector2(10, 10)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_jdbdn"]
-radius = 18.0
 
 [sub_resource type="Animation" id="Animation_d1imo"]
 length = 0.8
@@ -134,7 +131,7 @@ _data = {
 "Up": SubResource("Animation_ua6o1")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["heavy", "reset"]]
 script = ExtResource("1_wq0r8")
 speed = 85.0
 

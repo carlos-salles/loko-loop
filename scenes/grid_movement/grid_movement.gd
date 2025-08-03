@@ -65,9 +65,12 @@ func move(tiles: Vector2) -> void:
 	var movement = Vector2(tiles.x * TILE_SIZE.x, tiles.y * TILE_SIZE.y)
 	body.global_position += movement
 	if sprite:
+		if body.name == "Rock":
+			print("ROCK")
 		sprite.global_position -= movement
 		if sprite_pos_tween:
 			sprite_pos_tween.kill()
+		print(sprite_pos_tween)
 		sprite_pos_tween = create_tween()
 		sprite_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 		sprite_pos_tween.tween_property(sprite, "global_position", body.global_position, move_duration_seconds)
