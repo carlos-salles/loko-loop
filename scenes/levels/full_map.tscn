@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c255kv3h16mjf" path="res://scenes/player/Player.tscn" id="3_qfoqq"]
 [ext_resource type="PackedScene" uid="uid://cgts7aijoy4wr" path="res://scenes/levels/level_02.tscn" id="3_xt37h"]
 [ext_resource type="AudioStream" uid="uid://oy7buo7d3uhi" path="res://Sounds/Soundtrack_principal.ogg" id="4_4g28o"]
-[ext_resource type="PackedScene" uid="uid://bdq7atf1ihfsb" path="res://scenes/levels/level_03.tscn" id="7_k0off"]
-[ext_resource type="PackedScene" uid="uid://ymv8tcl0ncyo" path="res://scenes/levels/level_04.tscn" id="8_ejufv"]
+[ext_resource type="PackedScene" uid="uid://cnkk2r47df4rw" path="res://PauseMenu.tscn" id="6_4pfs3"]
 
 [node name="FullMap" type="Node2D"]
 
@@ -34,13 +33,5 @@ autoplay = true
 [node name="LoopManager" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("3_gx7wa")]
 root_node = NodePath("../Level00")
 
-<<<<<<< HEAD
-[node name="Level03" parent="." instance=ExtResource("7_k0off")]
-position = Vector2(736, 208)
-
-[node name="Level04" parent="." instance=ExtResource("8_ejufv")]
-position = Vector2(736, 0)
-=======
 [node name="PauseMenu" parent="." instance=ExtResource("6_4pfs3")]
 visible = false
->>>>>>> origin/main
