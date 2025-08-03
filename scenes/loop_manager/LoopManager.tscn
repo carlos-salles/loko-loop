@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=3 uid="uid://cmijfhkiho8oh"]
 
-[ext_resource type="Script" path="res://scenes/loop_manager/loop_manager.gd" id="1_ajvn0"]
+[ext_resource type="Script" uid="uid://dxftkvytc36of" path="res://scenes/loop_manager/loop_manager.gd" id="1_ajvn0"]
 [ext_resource type="Texture2D" uid="uid://cy0e3h11qkjv4" path="res://sprites/Ampulheta.png" id="2_dpxxf"]
 [ext_resource type="Texture2D" uid="uid://bdbcfremu3mqv" path="res://sprites/sand_particle.png" id="3_inpqv"]
 [ext_resource type="AudioStream" uid="uid://diif3fbihdb5h" path="res://Sounds/Som_de_vento_forte.ogg" id="4_jit7m"]

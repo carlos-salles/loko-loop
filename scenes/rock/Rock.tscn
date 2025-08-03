@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://twht6rc7vro1"]
 
 [ext_resource type="Texture2D" uid="uid://dvt5nbfh4ufke" path="res://sprites/obstacles_.png" id="1_fdbgq"]
-[ext_resource type="Script" path="res://scenes/rock/rock.gd" id="1_kdy4o"]
+[ext_resource type="Script" uid="uid://vctrqbn4ant4" path="res://scenes/rock/rock.gd" id="1_kdy4o"]
 [ext_resource type="PackedScene" uid="uid://cmau8vai6kh3t" path="res://scenes/grid_movement/GridMovement.tscn" id="2_wv71n"]
 [ext_resource type="AudioStream" uid="uid://cuva01ms18881" path="res://Sounds/Empurrar_Pedra.ogg" id="3_im4so"]
 [ext_resource type="Material" uid="uid://t4n873ekl76k" path="res://shaders/foil_material.tres" id="3_v5xhd"]

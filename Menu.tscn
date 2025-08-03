@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ngc1wd0bj2ug"]
 
-[ext_resource type="Script" path="res://Menu.gd" id="1_hbkwl"]
+[ext_resource type="Script" uid="uid://pay7xjgwmdox" path="res://Menu.gd" id="1_hbkwl"]
 [ext_resource type="Texture2D" uid="uid://dqllfggdi6vlg" path="res://background.png" id="2_2cf7y"]
 
 [sub_resource type="FontFile" id="FontFile_up2sv"]
@@ -150,7 +150,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_up2sv")
 theme_override_font_sizes/font_size = 12
-text = "Feito por Carlos, Ciro, Davi e Valber"
+text = "Feito por Carlos, Ciro, Juan e Valber"
 
 [node name="GameName" type="Label" parent="."]
 layout_mode = 2

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://c255kv3h16mjf"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_wq0r8"]
+[ext_resource type="Script" uid="uid://dqamtsgwf0o5o" path="res://scenes/player/player.gd" id="1_wq0r8"]
 [ext_resource type="Texture2D" uid="uid://ne0ug28130t6" path="res://sprites/Alori.png" id="2_8lfwe"]
 [ext_resource type="PackedScene" uid="uid://cmau8vai6kh3t" path="res://scenes/grid_movement/GridMovement.tscn" id="3_xlide"]
 [ext_resource type="AudioStream" uid="uid://df6v3483jyup2" path="res://Sounds/Caminhando.ogg" id="4_jbyyk"]
@@ -175,12 +175,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00xdd"]
 _data = {
-"Down": SubResource("Animation_d1imo"),
-"Idle": SubResource("Animation_he0bj"),
-"Left": SubResource("Animation_o30fy"),
-"RESET": SubResource("Animation_qoqwv"),
-"Right": SubResource("Animation_g7vhl"),
-"Up": SubResource("Animation_ua6o1")
+&"Down": SubResource("Animation_d1imo"),
+&"Idle": SubResource("Animation_he0bj"),
+&"Left": SubResource("Animation_o30fy"),
+&"RESET": SubResource("Animation_qoqwv"),
+&"Right": SubResource("Animation_g7vhl"),
+&"Up": SubResource("Animation_ua6o1")
 }
 
 [node name="Player" type="CharacterBody2D" groups=["heavy", "reset"]]

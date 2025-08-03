@@ -1,12 +1,12 @@
 [gd_scene load_steps=23 format=3 uid="uid://bbas26eanyle1"]
 
-[ext_resource type="Script" path="res://Menu.gd" id="1_octes"]
+[ext_resource type="Script" uid="uid://pay7xjgwmdox" path="res://Menu.gd" id="1_octes"]
 [ext_resource type="Texture2D" uid="uid://dqllfggdi6vlg" path="res://background.png" id="2_kkb5l"]
 [ext_resource type="FontFile" uid="uid://knqvq3hw7oja" path="res://pixel.ttf" id="3_hu2h0"]
 [ext_resource type="AudioStream" uid="uid://dppopc4tbenma" path="res://Sounds/Musica_Menu_Principal.ogg" id="3_k2osq"]
 [ext_resource type="Texture2D" uid="uid://ne0ug28130t6" path="res://sprites/Alori.png" id="6_12uth"]
 [ext_resource type="PackedScene" uid="uid://twht6rc7vro1" path="res://scenes/rock/Rock.tscn" id="6_p314r"]
-[ext_resource type="Script" path="res://scenes/player/fake_player.gd" id="6_rsyfv"]
+[ext_resource type="Script" uid="uid://3tmwr0egxvpg" path="res://scenes/player/fake_player.gd" id="6_rsyfv"]
 [ext_resource type="AudioStream" uid="uid://df6v3483jyup2" path="res://Sounds/Caminhando.ogg" id="7_2jrum"]
 [ext_resource type="PackedScene" uid="uid://cmau8vai6kh3t" path="res://scenes/grid_movement/GridMovement.tscn" id="7_gqleo"]
 [ext_resource type="Texture2D" uid="uid://bdbcfremu3mqv" path="res://sprites/sand_particle.png" id="10_v0xdn"]
@@ -190,8 +190,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hoi5o"]
 _data = {
-"Move_fake_Player": SubResource("Animation_1l5sh"),
-"RESET": SubResource("Animation_m3p4y")
+&"Move_fake_Player": SubResource("Animation_1l5sh"),
+&"RESET": SubResource("Animation_m3p4y")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a80fc"]
@@ -364,12 +364,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00xdd"]
 _data = {
-"Down": SubResource("Animation_d1imo"),
-"Idle": SubResource("Animation_he0bj"),
-"Left": SubResource("Animation_o30fy"),
-"RESET": SubResource("Animation_qoqwv"),
-"Right": SubResource("Animation_g7vhl"),
-"Up": SubResource("Animation_ua6o1")
+&"Down": SubResource("Animation_d1imo"),
+&"Idle": SubResource("Animation_he0bj"),
+&"Left": SubResource("Animation_o30fy"),
+&"RESET": SubResource("Animation_qoqwv"),
+&"Right": SubResource("Animation_g7vhl"),
+&"Up": SubResource("Animation_ua6o1")
 }
 
 [node name="Menu" type="Control"]
@@ -430,7 +430,7 @@ volume_db = -10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_hoi5o")
+&"": SubResource("AnimationLibrary_hoi5o")
 }
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -470,7 +470,7 @@ sprite = NodePath("../Sprite2D")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Fake_player"]
 libraries = {
-"": SubResource("AnimationLibrary_00xdd")
+&"": SubResource("AnimationLibrary_00xdd")
 }
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Fake_player"]
@@ -487,12 +487,12 @@ position = Vector2(-24, -40)
 rotation = -0.785398
 emitting = false
 amount = 2000
+texture = ExtResource("10_v0xdn")
 lifetime = 1.5
 one_shot = true
 speed_scale = 1.5
 randomness = 0.5
 lifetime_randomness = 0.5
-texture = ExtResource("10_v0xdn")
 emission_shape = 3
 emission_rect_extents = Vector2(184, 1)
 gravity = Vector2(980, 980)

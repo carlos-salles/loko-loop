@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://ymv8tcl0ncyo"]
+[gd_scene load_steps=11 format=4 uid="uid://ymv8tcl0ncyo"]
 
 [ext_resource type="TileSet" uid="uid://c1ojchv818udf" path="res://tile_set.tres" id="1_yrg58"]
 [ext_resource type="Texture2D" uid="uid://wbepbiykaktn" path="res://sprites/desert_elemens.png" id="2_7rcjf"]
-[ext_resource type="Script" path="res://scenes/levels/LevelTransition.gd" id="3_4wsrw"]
+[ext_resource type="Script" uid="uid://cc0ym3hbbejtk" path="res://scenes/levels/LevelTransition.gd" id="3_4wsrw"]
 [ext_resource type="PackedScene" uid="uid://cyry7fnnx1pl7" path="res://scenes/buttons/GroundButton.tscn" id="4_p6m7f"]
-[ext_resource type="PackedScene" uid="uid://cca8fbj05gwfn" path="res://scenes/buttons/Spikes.tscn" id="6_fefss"]
-[ext_resource type="PackedScene" uid="uid://c255kv3h16mjf" path="res://scenes/player/Player.tscn" id="6_m5co5"]
+[ext_resource type="PackedScene" uid="uid://dcspaxpm8n5fq" path="res://scenes/buttons/Spikes.tscn" id="6_fefss"]
 [ext_resource type="PackedScene" uid="uid://cmijfhkiho8oh" path="res://scenes/loop_manager/LoopManager.tscn" id="7_jtjml"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl6qh"]
@@ -62,15 +61,6 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.54221
 
-[node name="Area2D4" type="Area2D" parent="."]
-z_index = 1
-position = Vector2(204, 8)
-script = ExtResource("3_4wsrw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
-position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_vbndu")
-
 [node name="Area2D5" type="Area2D" parent="."]
 z_index = 1
 position = Vector2(204, 8)
@@ -104,11 +94,7 @@ required_buttons = [NodePath("../GroundButton4"), NodePath("../GroundButton5")]
 position = Vector2(232, 24)
 required_buttons = [NodePath("../GroundButton4"), NodePath("../GroundButton5")]
 
-[node name="Player" parent="." instance=ExtResource("6_m5co5")]
-position = Vector2(200, 184)
-
 [node name="LoopManager" parent="." node_paths=PackedStringArray("root_node") instance=ExtResource("7_jtjml")]
 root_node = NodePath("..")
 
-[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D5" to="Area2D5" method="_on_body_entered"]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=4 uid="uid://bdq7atf1ihfsb"]
+[gd_scene load_steps=11 format=4 uid="uid://bdq7atf1ihfsb"]
 
 [ext_resource type="TileSet" uid="uid://c1ojchv818udf" path="res://tile_set.tres" id="1_n3nb7"]
 [ext_resource type="Texture2D" uid="uid://wbepbiykaktn" path="res://sprites/desert_elemens.png" id="2_jby67"]
-[ext_resource type="Script" path="res://scenes/levels/LevelTransition.gd" id="3_wict2"]
+[ext_resource type="Script" uid="uid://cc0ym3hbbejtk" path="res://scenes/levels/LevelTransition.gd" id="3_wict2"]
 [ext_resource type="PackedScene" uid="uid://cyry7fnnx1pl7" path="res://scenes/buttons/GroundButton.tscn" id="4_kbkwl"]
 [ext_resource type="PackedScene" uid="uid://twht6rc7vro1" path="res://scenes/rock/Rock.tscn" id="5_f6owo"]
-[ext_resource type="PackedScene" uid="uid://cca8fbj05gwfn" path="res://scenes/buttons/Spikes.tscn" id="6_r1rif"]
+[ext_resource type="PackedScene" uid="uid://dcspaxpm8n5fq" path="res://scenes/buttons/Spikes.tscn" id="6_r1rif"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl6qh"]
 atlas = ExtResource("2_jby67")
@@ -31,9 +31,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58610"]
 size = Vector2(16, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbndu"]
-size = Vector2(64, 16)
 
 [node name="Level03" type="Node2D"]
 
@@ -73,15 +70,6 @@ script = ExtResource("3_wict2")
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_58610")
 
-[node name="Area2D4" type="Area2D" parent="."]
-z_index = 1
-position = Vector2(204, 8)
-script = ExtResource("3_wict2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
-position = Vector2(4, 0)
-shape = SubResource("RectangleShape2D_vbndu")
-
 [node name="GroundButton4" parent="." instance=ExtResource("4_kbkwl")]
 position = Vector2(152, 120)
 
@@ -109,4 +97,3 @@ position = Vector2(232, 24)
 required_buttons = [NodePath("../GroundButton4"), NodePath("../GroundButton5")]
 
 [connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnkk2r47df4rw"]
 
 [ext_resource type="FontFile" uid="uid://knqvq3hw7oja" path="res://pixel.ttf" id="1_gjtqb"]
-[ext_resource type="Script" path="res://PauseMenu.gd" id="1_i2bwt"]
+[ext_resource type="Script" uid="uid://dodxuncujk4vl" path="res://PauseMenu.gd" id="1_i2bwt"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_675g3"]
 action = &"ui_cancel"

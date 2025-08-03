@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cyry7fnnx1pl7" path="res://scenes/buttons/GroundButton.tscn" id="2_vxice"]
 [ext_resource type="PackedScene" uid="uid://twht6rc7vro1" path="res://scenes/rock/Rock.tscn" id="3_j8rl6"]
 [ext_resource type="PackedScene" uid="uid://dcspaxpm8n5fq" path="res://scenes/buttons/Spikes.tscn" id="4_kygu1"]
-[ext_resource type="Script" path="res://scenes/levels/LevelTransition.gd" id="5_tjs3d"]
+[ext_resource type="Script" uid="uid://cc0ym3hbbejtk" path="res://scenes/levels/LevelTransition.gd" id="5_tjs3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58610"]
 size = Vector2(16, 32)

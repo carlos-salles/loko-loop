@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyry7fnnx1pl7"]
 
-[ext_resource type="Script" path="res://scenes/buttons/ground_button.gd" id="1_hahtd"]
+[ext_resource type="Script" uid="uid://bc6asv8w5p6hl" path="res://scenes/buttons/ground_button.gd" id="1_hahtd"]
 [ext_resource type="Texture2D" uid="uid://wbepbiykaktn" path="res://sprites/desert_elemens.png" id="1_lp1wk"]
 [ext_resource type="Material" uid="uid://t4n873ekl76k" path="res://shaders/foil_material.tres" id="3_53jd4"]
 

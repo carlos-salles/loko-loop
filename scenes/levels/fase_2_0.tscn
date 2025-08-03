@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://c1ojchv818udf" path="res://tile_set.tres" id="1_oeiqo"]
 [ext_resource type="Texture2D" uid="uid://wbepbiykaktn" path="res://sprites/desert_elemens.png" id="1_ssxt0"]
-[ext_resource type="Script" path="res://scenes/levels/LevelTransition.gd" id="3_40bg3"]
+[ext_resource type="Script" uid="uid://cc0ym3hbbejtk" path="res://scenes/levels/LevelTransition.gd" id="3_40bg3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hl6qh"]
 atlas = ExtResource("1_ssxt0")
