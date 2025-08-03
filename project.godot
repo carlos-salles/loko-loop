@@ -28,6 +28,10 @@ window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
 
+[global_group]
+
+heavy=""
+
 [input]
 
 interact={

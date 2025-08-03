@@ -1,4 +1,6 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://c1ojchv818udf"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://c1ojchv818udf"]
+
+[ext_resource type="PackedScene" uid="uid://twht6rc7vro1" path="res://scenes/rock/Rock.tscn" id="1_0d33a"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_o3uxw"]
 tile_data = PackedInt32Array(0, 0, 1, 65536, 131072, 0)
@@ -183,6 +185,9 @@ texture = SubResource("CompressedTexture2D_yue86")
 0:1/0 = 0
 1:1/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_x2rf0"]
+scenes/1/scene = ExtResource("1_0d33a")
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -191,4 +196,5 @@ terrain_set_0/terrain_0/color = Color(0.166434, 0.377006, 0.685978, 1)
 sources/0 = SubResource("TileSetAtlasSource_qp18m")
 sources/1 = SubResource("TileSetAtlasSource_dnq16")
 sources/2 = SubResource("TileSetAtlasSource_jlerb")
+sources/3 = SubResource("TileSetScenesCollectionSource_x2rf0")
 pattern_0 = SubResource("TileMapPattern_o3uxw")
