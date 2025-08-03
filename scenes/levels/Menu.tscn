@@ -1,8 +1,376 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbas26eanyle1"]
+[gd_scene load_steps=23 format=3 uid="uid://bbas26eanyle1"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_octes"]
 [ext_resource type="Texture2D" uid="uid://dqllfggdi6vlg" path="res://background.png" id="2_kkb5l"]
+[ext_resource type="FontFile" uid="uid://knqvq3hw7oja" path="res://pixel.ttf" id="3_hu2h0"]
 [ext_resource type="AudioStream" uid="uid://dppopc4tbenma" path="res://Sounds/Musica_Menu_Principal.ogg" id="3_k2osq"]
+[ext_resource type="Texture2D" uid="uid://ne0ug28130t6" path="res://sprites/Alori.png" id="6_12uth"]
+[ext_resource type="PackedScene" uid="uid://twht6rc7vro1" path="res://scenes/rock/Rock.tscn" id="6_p314r"]
+[ext_resource type="Script" path="res://scenes/player/fake_player.gd" id="6_rsyfv"]
+[ext_resource type="AudioStream" uid="uid://df6v3483jyup2" path="res://Sounds/Caminhando.ogg" id="7_2jrum"]
+[ext_resource type="PackedScene" uid="uid://cmau8vai6kh3t" path="res://scenes/grid_movement/GridMovement.tscn" id="7_gqleo"]
+[ext_resource type="Texture2D" uid="uid://bdbcfremu3mqv" path="res://sprites/sand_particle.png" id="10_v0xdn"]
+
+[sub_resource type="Animation" id="Animation_1l5sh"]
+resource_name = "Move_fake_Player"
+length = 34.79
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fake_player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 5.5, 7.5, 10, 12, 13, 15, 16, 18, 20, 22, 24.5, 27.5, 29),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(160, 128), Vector2(224, 128), Vector2(224, 184), Vector2(288, 184), Vector2(288, 120), Vector2(256, 120), Vector2(256, 56), Vector2(256, 24), Vector2(192, 24), Vector2(96, 24), Vector2(96, 67), Vector2(32, 67), Vector2(32, 67), Vector2(160, 128)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fake_player:input_x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 5.5, 7.5, 10, 12, 13, 15, 16, 18, 20, 22, 24.5, 29),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1, 0, -1, 0, 0, -1, -1, 0, -1, 0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fake_player:input_y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 7, 10, 12, 13, 15, 16, 18, 20, 22, 24.5, 25, 29),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, -1, 0, -1, -1, 0, 0, 1, 0, 1, 0, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameName:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(18, 20, 27.5, 29),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-96, 0), Vector2(-96, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(27.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Rock:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(7, 29),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(224, 208), Vector2(224, 160)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_m3p4y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fake_player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, 128)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fake_player:input_x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Fake_player:input_y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameName:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-128, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Rock:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(224, 160)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hoi5o"]
+_data = {
+"Move_fake_Player": SubResource("Animation_1l5sh"),
+"RESET": SubResource("Animation_m3p4y")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a80fc"]
+size = Vector2(10, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdbdn"]
+radius = 18.0
+
+[sub_resource type="Animation" id="Animation_d1imo"]
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_he0bj"]
+resource_name = "Idle"
+length = 0.35
+loop_mode = 1
+step = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_o30fy"]
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_qoqwv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g7vhl"]
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_ua6o1"]
+resource_name = "Walk"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00xdd"]
+_data = {
+"Down": SubResource("Animation_d1imo"),
+"Idle": SubResource("Animation_he0bj"),
+"Left": SubResource("Animation_o30fy"),
+"RESET": SubResource("Animation_qoqwv"),
+"Right": SubResource("Animation_g7vhl"),
+"Up": SubResource("Animation_ua6o1")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,64 +381,123 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_octes")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_kkb5l")
-expand_mode = 1
-
-[node name="MadeBy" type="HBoxContainer" parent="."]
-layout_mode = 2
-offset_left = 175.0
-offset_top = 190.0
-offset_right = 362.0
-offset_bottom = 207.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Placeholder" type="Label" parent="MadeBy"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "Feito por Carlos, Ciro, Davi e Valber"
-
 [node name="GameName" type="Label" parent="."]
-layout_mode = 2
-offset_top = 15.0
-offset_right = 148.0
-offset_bottom = 49.0
+layout_mode = 1
+offset_right = 189.0
+offset_bottom = 60.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hu2h0")
 theme_override_font_sizes/font_size = 25
 text = "Loko Loop"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 17.0
-offset_top = 67.0
+offset_left = 4.0
+offset_top = 57.0
 offset_right = 85.0
-offset_bottom = 141.0
+offset_bottom = 175.0
 theme_override_constants/separation = 20
 
 [node name="Play" type="Button" parent="VBoxContainer" groups=["button"]]
 layout_mode = 2
 focus_mode = 0
-theme_override_font_sizes/font_size = 15
-text = "Jogar"
+theme_override_fonts/font = ExtResource("3_hu2h0")
+theme_override_font_sizes/font_size = 10
+text = "Play"
+alignment = 0
+
+[node name="Creditos" type="Button" parent="VBoxContainer" groups=["button"]]
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("3_hu2h0")
+theme_override_font_sizes/font_size = 10
+text = "Credits
+"
+alignment = 0
 
 [node name="Quit" type="Button" parent="VBoxContainer" groups=["button"]]
 layout_mode = 2
 focus_mode = 0
-theme_override_font_sizes/font_size = 15
-text = "Sair"
+theme_override_fonts/font = ExtResource("3_hu2h0")
+theme_override_font_sizes/font_size = 10
+text = "Quit"
+alignment = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_k2osq")
 volume_db = -10.0
-autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hoi5o")
+}
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(183, 106)
+texture = ExtResource("2_kkb5l")
+
+[node name="Fake_player" type="CharacterBody2D" parent="."]
+position = Vector2(168, 128)
+script = ExtResource("6_rsyfv")
+speed = 85.0
+input_x = 1
+input_y = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Fake_player"]
+texture = ExtResource("6_12uth")
+hframes = 4
+vframes = 5
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fake_player"]
+visible = false
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_a80fc")
+
+[node name="InteractZone" type="Area2D" parent="Fake_player"]
+visible = false
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fake_player/InteractZone"]
+shape = SubResource("CircleShape2D_jdbdn")
+
+[node name="GridMovement" parent="Fake_player" node_paths=PackedStringArray("sprite") instance=ExtResource("7_gqleo")]
+visible = false
+sprite = NodePath("../Sprite2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fake_player"]
+libraries = {
+"": SubResource("AnimationLibrary_00xdd")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Fake_player"]
+stream = ExtResource("7_2jrum")
+volume_db = -10.0
+pitch_scale = 0.8
+
+[node name="Rock" parent="." instance=ExtResource("6_p314r")]
+position = Vector2(224, 160)
+script = null
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-24, -40)
+rotation = -0.785398
+emitting = false
+amount = 2000
+lifetime = 1.5
+one_shot = true
+speed_scale = 1.5
+randomness = 0.5
+lifetime_randomness = 0.5
+texture = ExtResource("10_v0xdn")
+emission_shape = 3
+emission_rect_extents = Vector2(184, 1)
+gravity = Vector2(980, 980)
+initial_velocity_max = 175.83
+linear_accel_min = 100.0
+linear_accel_max = 100.0
+angle_min = -517.4
+angle_max = 45.0
