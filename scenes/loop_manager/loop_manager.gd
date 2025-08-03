@@ -68,7 +68,10 @@ func reset(is_full_reset: bool):
 	tween.set_parallel(true)
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	tween.set_trans(Tween.TRANS_SINE)
-
+	
+	if is_full_reset:
+		finished_timers = 0
+		
 	for x in reset_nodes:
 
 		x.node.reset(is_full_reset)
