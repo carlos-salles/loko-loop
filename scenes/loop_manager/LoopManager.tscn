@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://cmijfhkiho8oh"]
+[gd_scene load_steps=39 format=3 uid="uid://cmijfhkiho8oh"]
 
 [ext_resource type="Script" path="res://scenes/loop_manager/loop_manager.gd" id="1_ajvn0"]
 [ext_resource type="Texture2D" uid="uid://cy0e3h11qkjv4" path="res://sprites/Ampulheta.png" id="2_dpxxf"]
 [ext_resource type="Texture2D" uid="uid://bdbcfremu3mqv" path="res://sprites/sand_particle.png" id="3_inpqv"]
+[ext_resource type="AudioStream" uid="uid://diif3fbihdb5h" path="res://Sounds/Som_de_vento_forte.ogg" id="4_jit7m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c3wx5"]
 atlas = ExtResource("2_dpxxf")
@@ -302,9 +303,12 @@ offset = Vector2(16, 16)
 position = Vector2(-24, -40)
 rotation = -0.785398
 emitting = false
-amount = 1000
+amount = 2000
+lifetime = 1.5
 one_shot = true
 speed_scale = 1.5
+randomness = 0.5
+lifetime_randomness = 0.5
 texture = ExtResource("3_inpqv")
 emission_shape = 3
 emission_rect_extents = Vector2(184, 1)
@@ -314,5 +318,8 @@ linear_accel_min = 100.0
 linear_accel_max = 100.0
 angle_min = -517.4
 angle_max = 45.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jit7m")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

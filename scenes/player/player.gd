@@ -37,7 +37,9 @@ func movement():
 	else:
 		if input_y > 0: animation_player.play("Down")
 		elif input_y < 0: animation_player.play("Up")
-		#else: animation_player.play("Idle")
+		else: 
+			animation_player.play("Idle")
+			$Sprite2D.frame_coords.x = 0
 		dir = Vector2(0, input_y)
 		
 	if dir != Vector2.ZERO:
@@ -47,10 +49,11 @@ func movement():
 		var body = grid_movement.get_body_torwards(dir)
 		if body == null:
 			grid_movement.move(dir)
-		else:
-			var gm = body.get_node("GridMovement")
-			if gm and (gm as GridMovement).push(dir):
-				print(gm.get_parent().name)
+		elif body.has_node("GridMovement"):
+			var gm = body.get_node("GridMovement") as GridMovement
+			if gm.push(dir):
+				var audio = gm.get_parent().get_node("AudioStreamPlayer2D") as AudioStreamPlayer2D
 				grid_movement.move(dir)
-	
-	
+				var pos = audio.get_playback_position()
+				if pos == 0 || pos > 0.25:
+					audio.play()

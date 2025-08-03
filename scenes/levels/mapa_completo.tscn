@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://17wm5lwxaf4d"]
+[gd_scene load_steps=5 format=3 uid="uid://17wm5lwxaf4d"]
 
 [ext_resource type="PackedScene" uid="uid://c2ea3f8uwb0ju" path="res://scenes/levels/fase_2_0.tscn" id="1_x2p4w"]
 [ext_resource type="PackedScene" uid="uid://b2kaoxt24dw4y" path="res://scenes/levels/fase_2_1.tscn" id="2_orttf"]
 [ext_resource type="PackedScene" uid="uid://c255kv3h16mjf" path="res://scenes/player/Player.tscn" id="3_df08h"]
+[ext_resource type="AudioStream" uid="uid://oy7buo7d3uhi" path="res://Sounds/Soundtrack_principal.ogg" id="4_0awal"]
 
 [node name="MapaCompleto" type="Node2D"]
 
@@ -12,9 +13,13 @@ position = Vector2(368, 0)
 [node name="fase2-0" parent="." instance=ExtResource("1_x2p4w")]
 
 [node name="Player" parent="." instance=ExtResource("3_df08h")]
-position = Vector2(32, 144)
+position = Vector2(8, 152)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0awal")
+volume_db = 2.0
+pitch_scale = 0.7
+autoplay = true

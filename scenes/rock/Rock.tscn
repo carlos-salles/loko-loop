@@ -1,16 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://twht6rc7vro1"]
+[gd_scene load_steps=5 format=3 uid="uid://twht6rc7vro1"]
 
-[ext_resource type="Script" path="res://scenes/rock/rock.gd" id="1_dk72k"]
 [ext_resource type="Texture2D" uid="uid://dvt5nbfh4ufke" path="res://sprites/obstacles_.png" id="1_fdbgq"]
 [ext_resource type="PackedScene" uid="uid://cmau8vai6kh3t" path="res://scenes/grid_movement/GridMovement.tscn" id="2_wv71n"]
-[ext_resource type="AudioStream" uid="uid://diqx8il15q15v" path="res://Sounds/Empurrar_Pedra.wav" id="3_j6r7y"]
+[ext_resource type="AudioStream" uid="uid://cuva01ms18881" path="res://Sounds/Empurrar_Pedra.ogg" id="3_im4so"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vy4jn"]
 size = Vector2(16, 16)
 
-[node name="Rock" type="AnimatableBody2D" groups=["heavy", "reset"]]
-sync_to_physics = false
-script = ExtResource("1_dk72k")
+[node name="Rock" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fdbgq")
@@ -25,4 +22,4 @@ sprite = NodePath("../Sprite2D")
 pushable = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_j6r7y")
+stream = ExtResource("3_im4so")

@@ -83,8 +83,10 @@ func _on_timer_timeout() -> void:
 
 func sand_animation():
 	var particles = $CPUParticles2D as CPUParticles2D
+	get_node("AudioStreamPlayer2D").play()
 	particles.emitting = true
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.5).timeout
+	print("Parou")
 	particles.emitting = false
 	
 	
